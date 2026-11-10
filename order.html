@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>妙吉祥 冷凍宅配訂購單</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f3ece0;color:#3a2a1a;font-family:'Noto Sans TC','Microsoft JhengHei','PingFang TC',Arial,sans-serif;padding-bottom:90px}
+.w{max-width:600px;margin:0 auto;background:#fff}
+header{background:#b3201f;color:#fff;text-align:center;padding:24px 16px}
+header small{color:#f6d98a;letter-spacing:6px;font-size:13px}
+header h1{margin:6px 0 2px;font-size:34px;letter-spacing:8px}
+header p{margin:0;color:#f6d98a;font-size:16px;letter-spacing:2px}
+section{padding:16px}
+h2{margin:0 0 10px;color:#b3201f;font-size:19px;letter-spacing:2px}
+label{display:block;font-size:14px;margin:10px 0 4px;font-weight:bold}
+label i{color:#b3201f;font-style:normal}
+input[type=text],input[type=tel],input[type=date],textarea{width:100%;padding:10px;border:1px solid #d9c8a0;border-radius:8px;font-size:16px;font-family:inherit}
+.rd label{display:inline-block;font-weight:normal;margin:4px 14px 0 0}
+.it{display:flex;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid #f0e4c8}
+.it .n{flex:1;min-width:0}
+.it b{font-size:15px}
+.it small{display:block;color:#8a7860;font-size:12px}
+.it .p{color:#b3201f;font-weight:bold;font-size:14px}
+.q{display:flex;align-items:center;gap:6px}
+.q button{width:34px;height:34px;border-radius:50%;border:1px solid #b3201f;background:#fff;color:#b3201f;font-size:20px;line-height:1;cursor:pointer}
+.q span{min-width:20px;text-align:center;font-weight:bold}
+.it.on{background:#fff7dc}
+.nt{background:#fff7dc;border:1px solid #e0b64a;border-radius:8px;padding:12px 14px;font-size:13px;line-height:1.8}
+.nt ol{margin:4px 0 0;padding-left:18px}
+#bar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:3px solid #e0b64a;padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;justify-content:space-between;gap:10px;max-width:600px;margin:0 auto}
+#bar div{font-size:14px}#bar strong{color:#b3201f;font-size:22px}
+.btn{background:#b3201f;color:#fff;border:0;border-radius:24px;padding:12px 22px;font-size:16px;font-weight:bold;cursor:pointer;font-family:inherit}
+.btn.g{background:#e8c25a;color:#7a1413}.btn.o{background:#fff;color:#b3201f;border:1px solid #b3201f}
+#err{color:#b3201f;font-size:14px;margin-top:8px;display:none}
+#md{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;padding:14px;z-index:9}
+#md .bx{background:#fff;border-radius:12px;max-width:560px;width:100%;max-height:92vh;overflow:auto;padding:16px}
+#md textarea{height:230px;font-size:14px}
+#md .bx .btn{display:block;width:100%;margin-top:8px}
+</style>
+</head>
+<body>
+<div class="w">
+<header><small>就 素 快 炒</small><h1>妙吉祥</h1><p>冷凍宅配訂購單</p></header>
+
+<section>
+<h2>客戶基本資料</h2>
+<label>客戶姓名 <i>*</i></label><input type="text" id="nm" autocomplete="name">
+<label>聯絡電話 <i>*</i></label><input type="tel" id="tel" autocomplete="tel">
+<label>送貨地址 <i>*</i></label><input type="text" id="ad" autocomplete="street-address">
+<label>指定到貨日 <i>*</i></label><input type="date" id="dt">
+<label>到貨時段 <i>*</i></label>
+<div class="rd"><label><input type="radio" name="tm" value="13:00 前"> 13:00 前</label><label><input type="radio" name="tm" value="14 時～18 時"> 14 時～18 時</label></div>
+<label>備註</label><textarea id="rm" rows="2"></textarea>
+</section>
+
+<section>
+<h2>選擇品項</h2>
+<div id="ls"></div>
+</section>
+
+<section>
+<div class="nt"><b>訂購需知</b>
+<ol>
+<li>確認訂單無誤並收到款項後即安排出貨，預計五個工作天可到貨。匯款後請來電告知匯款帳號末五碼或姓名、匯款金額，以利確認。</li>
+<li>「運費」自付，由黑貓宅急便配送。</li>
+<li>所有產品皆使用天然新鮮食材烹煮，無添加任何防腐劑，為維持食物新鮮度及口感，請儘早食用並以冷凍保存，建議冷凍期限不超過一個月。</li>
+</ol>
+<b>匯款資訊</b><br>永豐銀行 807 苓雅分行　帳號：172-018-0005615-7<br>戶名：妙吉祥飲食文化行吳愛珍
+</div>
+<p style="text-align:center;font-size:14px"><a href="./" style="color:#b3201f">← 返回完整菜單</a>　電話 <a href="tel:077803211" style="color:#b3201f">07-7803211</a></p>
+</section>
+</div>
+
+<div id="bar"><div>共 <span id="cn">0</span> 件<br><strong id="tt">$0</strong></div><button class="btn" id="go">確認訂單</button></div>
+
+<div id="md"><div class="bx">
+<h2>請確認訂單內容</h2>
+<textarea id="tx" readonly></textarea>
+<p style="font-size:13px;color:#6b5a45;line-height:1.7;margin:8px 0 0">按下方按鈕後，會開啟信件並帶入以上內容，請按「傳送」才算完成。收到信後，我們會回覆確認與匯款資訊。</p>
+<button class="btn" id="m1">用手機郵件 App 寄出</button>
+<button class="btn g" id="m2">用 Gmail 網頁寄出</button>
+<button class="btn o" id="m3">複製訂單內容</button>
+<button class="btn o" id="m4" style="border-color:#999;color:#666">返回修改</button>
+</div></div>
+
+<script>
+var MAIL="utinafoodco.mkt@gmail.com";
+// [品名, 備註, 單位, 價格]
+var D=[
+["巴東咖哩","蛋奶素・經典南洋風味咖哩","包",560],
+["麻辣豆腐湯","","2包",520],["麻辣豆腐湯","","1包",280],
+["麻辣湯底","","包",150],["三杯猴頭菇","","包",560],
+["橄欖菜苦瓜","蛋素","大",520],["橄欖菜苦瓜","蛋素","小",260],
+["蜜汁叉燒","","包",440],["養生湯","","包",300],["炒米粉","","3包",290],
+["吉祥粽","6入","包",280],["素燥","","包",230],["咖哩湯","奶素","包",200],
+["黑胡椒柳柳","蛋素","包",220],["吉米","蛋素","包",170],
+["醬油木耳絲","","包",160],["酸菜金菇","","包",160],
+["破布子","季節限定","包",150],["芒果青","季節限定","包",120],
+["鹹酥","","包",200],["萬福丸","","包",195],["咖哩包","","包",185],["叉燒包","","包",185],
+["黃金泡菜","","瓶",180],["懷舊炸排","蛋素","包",180],["素圓","","包",180],
+["鮮味棒","","盒",175],["鮮味捲","蛋素","包",165],["炸丸","","包",160],
+["素宮保丁","","包",160],["鮮味腐竹","","包",160],["包子","","包",145],
+["白菜滷","","包",135],["冰心豆干","","包",135],["酸辣湯","","包",135],["鮮味豆腐","","包",80]
+];
+var Q=D.map(function(){return 0});
+var ls=document.getElementById('ls');
+D.forEach(function(d,i){
+  var e=document.createElement('div');e.className='it';e.id='r'+i;
+  e.innerHTML='<div class="n"><b>'+d[0]+'</b><small>'+(d[1]?d[1]+'　':'')+'</small></div><div class="p">$'+d[3]+'/'+d[2]+'</div><div class="q"><button type="button" data-i="'+i+'" data-d="-1">−</button><span id="q'+i+'">0</span><button type="button" data-i="'+i+'" data-d="1">+</button></div>';
+  ls.appendChild(e);
+});
+ls.addEventListener('click',function(e){
+  var b=e.target.closest('button');if(!b)return;
+  var i=+b.dataset.i;Q[i]=Math.max(0,Math.min(99,Q[i]+ +b.dataset.d));
+  document.getElementById('q'+i).textContent=Q[i];
+  document.getElementById('r'+i).classList.toggle('on',Q[i]>0);
+  sum();
+});
+function sum(){
+  var t=0,c=0;Q.forEach(function(q,i){t+=q*D[i][3];c+=q;});
+  document.getElementById('cn').textContent=c;
+  document.getElementById('tt').textContent='$'+t.toLocaleString();
+  return [t,c];
+}
+var d0=new Date();d0.setDate(d0.getDate()+1);
+document.getElementById('dt').min=d0.toISOString().slice(0,10);
+function v(id){return document.getElementById(id).value.trim();}
+function build(){
+  var s=sum(),tm=document.querySelector('input[name=tm]:checked');
+  var L=['【妙吉祥 冷凍宅配訂單】','','客戶姓名：'+v('nm'),'聯絡電話：'+v('tel'),'送貨地址：'+v('ad'),'指定到貨日：'+v('dt'),'到貨時段：'+tm.value,'備註：'+(v('rm')||'無'),'','訂購品項：'];
+  Q.forEach(function(q,i){if(q){var d=D[i];L.push('．'+d[0]+(d[1]?'（'+d[1]+'）':'')+' $'+d[3]+'/'+d[2]+' × '+q+' ＝ $'+(q*d[3]).toLocaleString());}});
+  L.push('','共 '+s[1]+' 件，總金額 $'+s[0].toLocaleString()+'（不含運費）');
+  return L.join('\n');
+}
+var md=document.getElementById('md'),er=null;
+document.getElementById('go').onclick=function(){
+  var miss=[];
+  if(!v('nm'))miss.push('姓名');if(!v('tel'))miss.push('電話');if(!v('ad'))miss.push('地址');
+  if(!v('dt'))miss.push('到貨日');if(!document.querySelector('input[name=tm]:checked'))miss.push('到貨時段');
+  if(sum()[1]===0)miss.push('至少一項商品');
+  if(miss.length){alert('請填寫或選擇：'+miss.join('、'));return;}
+  document.getElementById('tx').value=build();md.style.display='flex';
+};
+function subj(){return '【冷凍宅配訂單】'+v('nm')+' '+v('tel');}
+document.getElementById('m1').onclick=function(){location.href='mailto:'+MAIL+'?subject='+encodeURIComponent(subj())+'&body='+encodeURIComponent(build());};
+document.getElementById('m2').onclick=function(){window.open('https://mail.google.com/mail/?view=cm&fs=1&to='+MAIL+'&su='+encodeURIComponent(subj())+'&body='+encodeURIComponent(build()),'_blank');};
+document.getElementById('m3').onclick=function(){
+  var t=document.getElementById('tx');t.select();
+  try{navigator.clipboard.writeText(t.value);}catch(e){document.execCommand('copy');}
+  alert('已複製。請貼到 LINE 或電子郵件（'+MAIL+'）傳給我們。');
+};
+document.getElementById('m4').onclick=function(){md.style.display='none';};
+</script>
+</body>
+</html>
