@@ -41,8 +41,7 @@ function setImg(el,src){
 }
 document.addEventListener('click',function(e){
   var el=e.target.closest('.ph');if(!el)return;cur=el;
-  var u=prompt('貼上圖片網址（https://…）。
-若要上傳電腦裡的檔案，請按「取消」。','');
+  var u=prompt('貼上圖片網址（https://…）。\n若要上傳電腦裡的檔案，請按「取消」。','');
   if(u){setImg(cur,u.trim());return;}
   if(u===null)fi.click();
 });
